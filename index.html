@@ -1,79 +1,326 @@
 <!DOCTYPE html>
 <html lang="mr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Quick Quest Carriers - पूर्ण वेबसाइट</title>
-<style>
-body {font-family: Arial, sans-serif; background: #f0f8ff; padding: 0; margin: 0;}
-header {background: #007BFF; color: white; padding: 15px 20px;}
-nav ul {list-style: none; padding: 0; margin: 0; display: flex;}
-nav ul li {margin-right: 20px; cursor: pointer;}
-nav ul li a {color: white; text-decoration: none; font-weight: bold;}
-section {padding: 20px; max-width: 900px; margin: auto; background: white; margin-bottom: 25px; border-radius: 8px; box-shadow: 0 0 8px rgba(0,0,0,0.15);}
-h2 {color: #007BFF;}
-form label {font-weight: bold; display: block; margin-bottom: 6px;}
-form input, form textarea {width: 100%; padding: 10px; margin-bottom: 15px; border-radius: 6px; border: 1px solid #ccc;}
-form button {background: #007BFF; color: white; border: none; padding: 10px 18px; cursor: pointer; border-radius: 6px; font-weight: bold;}
-form button:hover {background: #0056b3;}
-.success-message {color: green; font-weight: bold; margin-top: 18px;}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quick Quest Carriers - विश्वसनीय वाहतूक सेवा</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<header>
-  <h1>Quick Quest Carriers</h1>
-  <nav>
-    <ul>
-      <li><a href="#home">मुख्यपृष्ठ</a></li>
-      <li><a href="#services">सेवा</a></li>
-      <li><a href="#about">आमच्याबद्दल</a></li>
-      <li><a href="#feedback">फीडबॅक</a></li>
-    </ul>
-  </nav>
-</header>
-<section id="home">
-  <h2>पुणे-मुंबईतील विश्वसनीय वाहतूक सेवा</h2>
-  <p>Quick Quest Carriers तुम्हाला व्यावसायिक चालक आणि बंदिस्त ८-फूट वाहनांसह वेळेवर आणि सुरक्षित वाहतूक सेवा प्रदान करतो.</p>
-</section>
-<section id="services">
-  <h2>सेवा</h2>
-  <ul>
-    <li>८-फूट बंदिस्त वाहन भाड्याने देणे</li>
-    <li>व्यावसायिक, १२ तास ड्युटीचे चालक</li>
-    <li>दररोज ८० किमी पर्यंतचा पॅकेज</li>
-    <li>CNG आणि डिझेल वाहन पर्याय</li>
-  </ul>
-</section>
-<section id="about">
-  <h2>आमच्याबद्दल</h2>
-  <p>Quick Quest Carriers, Market Yard, Pune 411037 येथे मुख्यालय असलेले, वाहतूक सेवा क्षेत्रातील अनुभवसंपन्न व्यवसाय आहे.</p>
-</section>
-<section id="feedback">
-  <h2>फीडबॅक</h2>
-  <form id="feedbackForm">
-    <label for="name">नाव (Name):</label>
-    <input type="text" id="name" name="name" placeholder="आपले नाव लिहा" required />
-    <label for="email">ईमेल (Email):</label>
-    <input type="email" id="email" name="email" placeholder="आपला ईमेल लिहा" required />
-    <label for="message">तुमचा अभिप्राय (Message):</label>
-    <textarea id="message" name="message" rows="5" placeholder="आपला अभिप्राय येथे लिहा" required></textarea>
-    <button type="submit">पाठवा (Submit)</button>
-    <div id="formMessage" class="success-message"></div>
-  </form>
-</section>
-<script>
-document.getElementById('feedbackForm').addEventListener('submit', function(e) {
-  e.preventDefault();
-  let name = document.getElementById('name').value.trim();
-  let email = document.getElementById('email').value.trim();
-  let message = document.getElementById('message').value.trim();
-  if (!name || !email || !message) {
-    alert('कृपया सर्व आवश्यक क्षेत्रे भरा.');
-    return;
-  }
-  document.getElementById('formMessage').textContent = 'आपला अभिप्राय आम्हाला मिळाला आहे, धन्यवाद!';
-  this.reset();
-});
-</script>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav container">
+            <div class="nav-brand">
+                <h2>Quick Quest Carriers</h2>
+                <span class="tagline">विश्वसनीय वाहतूक सेवा</span>
+            </div>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="#home" class="nav-link">होम</a></li>
+                <li><a href="#services" class="nav-link">सेवा</a></li>
+                <li><a href="#about" class="nav-link">आमच्याबद्दल</a></li>
+                <li><a href="#reviews" class="nav-link">रिव्ह्यू</a></li>
+                <li><a href="#contact" class="nav-link">संपर्क</a></li>
+            </ul>
+            <button class="nav-toggle" id="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    विश्वसनीय आणि व्यावसायिक
+                    <span class="hero-highlight">वाहतूक सेवा</span>
+                </h1>
+                <p class="hero-description">
+                    ८-फूट एन्क्लोज्ड व्हेहिकल, व्यावसायिक चालक, १२ तासांची ड्युटी. 
+                    पुणे, मुंबई आणि संपूर्ण महाराष्ट्रात सेवा उपलब्ध.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#contact" class="btn btn--primary btn--lg">आता बुक करा</a>
+                    <a href="#services" class="btn btn--outline btn--lg">सेवा पहा</a>
+                </div>
+            </div>
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <h3>500+</h3>
+                    <p>संतुष्ट ग्राहक</p>
+                </div>
+                <div class="stat-item">
+                    <h3>12 तास</h3>
+                    <p>ड्युटी उपलब्धता</p>
+                </div>
+                <div class="stat-item">
+                    <h3>80 km</h3>
+                    <p>दैनिक समावेश</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <h2 class="section-title">आमच्या सेवा</h2>
+            <p class="section-subtitle">व्यावसायिक आणि विश्वसनीय वाहतूक सोल्यूशन्स</p>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">🚛</div>
+                    <h3>8-फूट एन्क्लोज्ड व्हेहिकल</h3>
+                    <p>सुरक्षित आणि स्पेसियस व्हेहिकल्स मालाच्या संरक्षणासाठी</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">👨‍💼</div>
+                    <h3>व्यावसायिक चालक</h3>
+                    <p>अनुभवी आणि प्रशिक्षित चालक सेवा</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🕐</div>
+                    <h3>12 तासांची ड्युटी</h3>
+                    <p>संपूर्ण दिवसभर उपलब्ध सेवा</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">⛽</div>
+                    <h3>CNG आणि डिझेल वाहने</h3>
+                    <p>पर्यावरणपूरक आणि इंधन कार्यक्षम वाहने</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">📦</div>
+                    <h3>मालवाहतूक सेवा</h3>
+                    <p>सुरक्षित आणि वेळेवर मालवाहतूक</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🏢</div>
+                    <h3>लॉजिस्टिक सोल्यूशन्स</h3>
+                    <p>व्यवसायांसाठी संपूर्ण लॉजिस्टिक सेवा</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2 class="section-title">आमच्याबद्दल</h2>
+                    <p>
+                        Quick Quest Carriers हा पुण्यातील अग्रणी वाहतूक सेवा प्रदाता आहे. 
+                        श्री. सोमनाथ गोसावी यांच्या नेतृत्वाखाली, आम्ही ग्राहकांना उच्च दर्जाची 
+                        आणि विश्वसनीय वाहतूक सेवा प्रदान करत आहोत.
+                    </p>
+                    <p>
+                        आमच्या 8-फूट एन्क्लोज्ड व्हेहिकल्स आणि व्यावसायिक चालकांसह, आम्ही 
+                        पुणे, मुंबई आणि संपूर्ण महाराष्ट्रात सेवा देत आहोत. आमची ध्येय 
+                        ग्राहकांच्या मालाची सुरक्षित आणि वेळेवर डिलिव्हरी करणे आहे.
+                    </p>
+                    <ul class="about-features">
+                        <li>दैनिक 80km समावेश</li>
+                        <li>12 तासांची ड्युटी उपलब्धता</li>
+                        <li>व्यावसायिक आणि अनुभवी चालक</li>
+                        <li>पुणे-मुंबई रूटवर विशेषज्ञता</li>
+                    </ul>
+                </div>
+                <div class="about-contact">
+                    <div class="contact-card">
+                        <h3>संपर्क माहिती</h3>
+                        <p><strong>मालक:</strong> श्री. सोमनाथ गोसावी</p>
+                        <p><strong>ईमेल:</strong> quickquestcarriers@gmail.com</p>
+                        <p><strong>फोन:</strong> 8329339619</p>
+                        <p><strong>पत्ता:</strong> Market Yard, Pune 411037</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section id="reviews" class="reviews">
+        <div class="container">
+            <h2 class="section-title">ग्राहक रिव्ह्यू</h2>
+            <p class="section-subtitle">आमच्या संतुष्ट ग्राहकांचे अनुभव</p>
+            
+            <div class="reviews-grid">
+                <div class="review-card">
+                    <div class="review-rating">
+                        <span class="stars">★★★★★</span>
+                        <span class="rating-number">5.0</span>
+                    </div>
+                    <p class="review-text">
+                        "अतिशय चांगली सेवा! वेळेवर आणि सुरक्षित डिलिव्हरी. चालक अत्यंत व्यावसायिक होता."
+                    </p>
+                    <div class="review-author">
+                        <strong>राहुल शर्मा</strong>
+                        <span>September 2025</span>
+                    </div>
+                </div>
+                
+                <div class="review-card">
+                    <div class="review-rating">
+                        <span class="stars">★★★★★</span>
+                        <span class="rating-number">5.0</span>
+                    </div>
+                    <p class="review-text">
+                        "Excellent service for my business deliveries. Professional drivers and reliable vehicles."
+                    </p>
+                    <div class="review-author">
+                        <strong>प्रिया पाटील</strong>
+                        <span>August 2025</span>
+                    </div>
+                </div>
+                
+                <div class="review-card">
+                    <div class="review-rating">
+                        <span class="stars">★★★★☆</span>
+                        <span class="rating-number">4.0</span>
+                    </div>
+                    <p class="review-text">
+                        "गुणवत्तापूर्ण सेवा आणि योग्य दर. पुन्हा वापरणार नक्की."
+                    </p>
+                    <div class="review-author">
+                        <strong>अमित देशमुख</strong>
+                        <span>July 2025</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Feedback Form Section -->
+    <section class="feedback">
+        <div class="container">
+            <h2 class="section-title">आपला फीडबॅक द्या</h2>
+            <p class="section-subtitle">आपला अनुभव आमच्यासाठी महत्वाचा आहे</p>
+            
+            <form class="feedback-form" id="feedback-form">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="name" class="form-label">नाव *</label>
+                        <input type="text" id="name" name="name" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email" class="form-label">ईमेल</label>
+                        <input type="email" id="email" name="email" class="form-control">
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="phone" class="form-label">फोन नंबर</label>
+                    <input type="tel" id="phone" name="phone" class="form-control">
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">रेटिंग *</label>
+                    <div class="rating-input" id="rating-input">
+                        <span class="star" data-rating="1">☆</span>
+                        <span class="star" data-rating="2">☆</span>
+                        <span class="star" data-rating="3">☆</span>
+                        <span class="star" data-rating="4">☆</span>
+                        <span class="star" data-rating="5">☆</span>
+                    </div>
+                    <input type="hidden" id="rating" name="rating" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="review" class="form-label">आपला अनुभव *</label>
+                    <textarea id="review" name="review" class="form-control" rows="4" 
+                        placeholder="कृपया आमच्या सेवेबद्दल आपला अनुभव शेअर करा..." required></textarea>
+                </div>
+                
+                <button type="submit" class="btn btn--primary btn--lg">फीडबॅक सबमिट करा</button>
+            </form>
+            
+            <!-- Success Message -->
+            <div id="success-message" class="success-message hidden">
+                <h3>धन्यवाद!</h3>
+                <p>आपला फीडबॅक यशस्वीपणे सबमिट झाला आहे.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">संपर्क करा</h2>
+            <p class="section-subtitle">आजच आमच्या सेवांचा लाभ घ्या</p>
+            
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">📧</div>
+                        <div>
+                            <h4>ईमेल</h4>
+                            <a href="mailto:quickquestcarriers@gmail.com">quickquestcarriers@gmail.com</a>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">📞</div>
+                        <div>
+                            <h4>फोन</h4>
+                            <a href="tel:8329339619">8329339619</a>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">📍</div>
+                        <div>
+                            <h4>पत्ता</h4>
+                            <p>Market Yard, Pune 411037</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">🚚</div>
+                        <div>
+                            <h4>सेवा क्षेत्र</h4>
+                            <p>पुणे, मुंबई, महाराष्ट्र</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="quick-contact">
+                    <div class="quick-contact-card">
+                        <h3>त्वरित संपर्क</h3>
+                        <p>24/7 बुकिंगसाठी कॉल करा</p>
+                        <a href="tel:8329339619" class="btn btn--primary btn--lg btn--full-width">
+                            आता कॉल करा
+                        </a>
+                        <a href="mailto:quickquestcarriers@gmail.com" class="btn btn--outline btn--lg btn--full-width mt-8">
+                            ईमेल पाठवा
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <h3>Quick Quest Carriers</h3>
+                    <p>विश्वसनीय वाहतूक सेवा</p>
+                    <p>© 2025 Quick Quest Carriers. सर्व हक्क राखीव.</p>
+                </div>
+                <div class="footer-contact">
+                    <h4>संपर्क</h4>
+                    <p>मालक: श्री. सोमनाथ गोसावी</p>
+                    <p>ईमेल: quickquestcarriers@gmail.com</p>
+                    <p>फोन: 8329339619</p>
+                    <p>Market Yard, Pune 411037</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
 </body>
 </html>
